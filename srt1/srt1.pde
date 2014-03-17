@@ -1,4 +1,4 @@
-
+import processing.opengl.*;
 import controlP5.*;
 ControlP5 cp5;
 int threshold;
@@ -28,10 +28,12 @@ PImage m;
 void setup() {
 
   m = loadImage("3.png");
-  m.resize(1920, 1080);
+  //m.resize(1920, 1080);
   //m.resize(2300, 2000);
+    m.resize(1440, 800);
 
-  size(m.width, m.height);
+
+  size(m.width, m.height, OPENGL);
   frameRate(30);
 
   cp5 = new ControlP5(this); 
@@ -162,7 +164,7 @@ void draw() {
     }
 
   m.updatePixels();
-  image(m, 0, 0);
+  image(m, 0, 0,);
 }
 
 
